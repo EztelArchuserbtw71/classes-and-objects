@@ -75,20 +75,23 @@ public:
     }
 
     void ListBooks() const 
-	{
-        if(books.empty()) 
-		{
-            cout<<"No books in the library.\n";
-        } else {
-            cout<<"Here are the books we have:\n\n";
-            cout<<"Title:             Author:         Year:\n";
-            cout<<"-------------------------------------------\n";
-            for (const auto& book : books) {
-                cout<<book.GetTitle()<<"             "<<book.GetAuthor()<<"         "<<book.GetYear()<<"\n";
-            }
-            cout<<"-------------------------------------------\n";
+{
+    if (books.empty()) 
+    {
+        cout << "No books in the library.\n";
+    } 
+    else 
+    {
+        cout << "Here are the books we have:\n\n";
+        cout << left << setw(25) << "Title" << setw(20) << "Author" << "Year\n";
+        cout << "-----------------------------------------------------------\n";
+        for (const auto& book : books) 
+        {
+            cout << left << setw(25) << book.GetTitle() << setw(20) << book.GetAuthor() << book.GetYear() << "\n";
         }
+        cout << "-----------------------------------------------------------\n";
     }
+}
 
     void SearchBook(const string& query) const
 	{
